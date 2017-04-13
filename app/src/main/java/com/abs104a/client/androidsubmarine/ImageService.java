@@ -29,6 +29,8 @@ public class ImageService extends Service {
     private String leftKickString = "";
     private String rightKickString = "";
     private String lightKickString = "";
+    private String rightOffKickString = "";
+    private String leftOffKickString = "";
 
     private Looper mServiceLooper;
 
@@ -60,6 +62,8 @@ public class ImageService extends Service {
         rightKickString = prefs.getString(this.getString(R.string.server_url_right_string),DEFAULT_SERVER);
         leftKickString = prefs.getString(this.getString(R.string.server_url_left_string),DEFAULT_SERVER);
         lightKickString = prefs.getString(this.getString(R.string.server_url_light_string),DEFAULT_SERVER);
+        rightOffKickString = prefs.getString(this.getString(R.string.server_url_right_off_string),DEFAULT_SERVER);
+        leftOffKickString = prefs.getString(this.getString(R.string.server_url_left_off_string),DEFAULT_SERVER);
     }
 
 
@@ -172,24 +176,42 @@ public class ImageService extends Service {
         });
     }
 
-    public void kickTurnRight(){
+    /**
+     * 右ボタンをキックする関数
+     * toggle true : ON　、false: OFF
+     */
+    public void kickTurnRight(final boolean toggle){
         mServiceHandler.post(new Runnable() {
             @Override
             public void run() {
                 //右のAPIをコール
-                getKickServer(rightKickString);
-                Log.v("ImageService","kickRight");
+                if (toggle){
+                  postKickServer(rightKickString);
+                  Log.v("ImageService","kickONRight");
+                }else{
+                  postKickServer(rightOffKickString);
+                  Log.v("ImageService","kickOFFRight");
+                }
             }
         });
     }
 
-    public void kickTurnLeft(){
+    /**
+     * 左ボタンをキックする関数
+     * toggle true : ON　、false: OFF
+     */
+    public void kickTurnLeft(final boolean toggle){
         mServiceHandler.post(new Runnable() {
             @Override
             public void run() {
                 //左のAPIをコール
-                getKickServer(leftKickString);
-                Log.v("ImageService","kickLeft");
+                if(toggle){
+                  postKickServer(leftKickString);
+                  Log.v("ImageService","kickONLeft");
+                }else {
+                  postKickServer(leftOffKickString);
+                  Log.v("ImageService","kickOFFLeft");
+                }
             }
         });
     }
@@ -284,4 +306,36 @@ public class ImageService extends Service {
         return flag;
     }
 
+    private boolean postKickServer(String urlString){
+        // 受け取ったbuilderでインターネット通信する
+        HttpURLConnection connection = null;
+        InputStream inputStream = null;
+        boolean flag = false;
+        try{
+
+            URL url = new URL(urlString);
+            connection = (HttpURLConnection)url.openConnection();
+            connection.setRequestMethod("POST");
+            connection.connect();
+            inputStream = connection.getInputStream();
+            Log.d("KickServer","Connected");
+            flag = true;
+        }catch (Exception e){
+            Log.d("KickServer","Connect Failed");
+        }finally
+        {
+            if (connection != null){
+                connection.disconnect();
+            }
+            try{
+                if (inputStream != null){
+                    inputStream.close();
+                }
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+
+        return flag;
+    }
 }

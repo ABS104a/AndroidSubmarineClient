@@ -164,13 +164,24 @@ public class StartActivity extends AppCompatActivity {
         {
             // 右ボタンの設定
             final View rightButton = mActivity.findViewById(R.id.button_right);
-            rightButton.setOnClickListener(new View.OnClickListener() {
+            rightButton.setOnTouchListener(new View.OnTouchListener() {
                 @Override
-                public void onClick(View v) {
+                public boolean onTouch(View v, MotionEvent event) {
                     // rightClick
                     if(mBoundService != null){
-                        mBoundService.kickTurnRight();
+                        switch(event.getAction()){
+                          case MotionEvent.ACTION_DOWN:
+                            mBoundService.kickTurnRight(true);
+                            break;
+                          case MotionEvent.ACTION_UP:
+                          case MotionEvent.ACTION_CANCEL:
+                          case MotionEvent.ACTION_OUTSIDE:
+                            mBoundService.kickTurnRight(false);
+                            break;
+                        }
                     }
+
+                    return false;
                 }
             });
 
@@ -179,16 +190,25 @@ public class StartActivity extends AppCompatActivity {
         {
             // 左ボタンの設定
             final View leftButton = mActivity.findViewById(R.id.button_left);
-            leftButton.setOnClickListener(new View.OnClickListener() {
+            leftButton.setOnTouchListener(new View.OnTouchListener() {
                 @Override
-                public void onClick(View v) {
+                public boolean onTouch(View v, MotionEvent event) {
                     // leftClick
                     if(mBoundService != null){
-                        mBoundService.kickTurnLeft();
+                        switch(event.getAction()){
+                          case MotionEvent.ACTION_DOWN:
+                            mBoundService.kickTurnLeft(true);
+                            break;
+                          case MotionEvent.ACTION_UP:
+                          case MotionEvent.ACTION_CANCEL:
+                          case MotionEvent.ACTION_OUTSIDE:
+                            mBoundService.kickTurnLeft(false);
+                            break;
+                        }
                     }
+                    return false;
                 }
             });
-
         }
 
         {

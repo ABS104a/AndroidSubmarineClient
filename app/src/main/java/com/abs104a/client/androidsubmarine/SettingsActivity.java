@@ -181,6 +181,8 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             bindPreferenceSummaryToValue(findPreference(this.getString(R.string.server_url_right_string)));
             bindPreferenceSummaryToValue(findPreference(this.getString(R.string.server_url_left_string)));
             bindPreferenceSummaryToValue(findPreference(this.getString(R.string.server_url_light_string)));
+            bindPreferenceSummaryToValue(findPreference(this.getString(R.string.server_url_left_off_string)));
+            bindPreferenceSummaryToValue(findPreference(this.getString(R.string.server_url_right_off_string)));
         }
 
         @Override

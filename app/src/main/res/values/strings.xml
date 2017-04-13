@@ -18,8 +18,10 @@
 
     <string name="pref_title_image_display_name">Image Server Image Url</string>
     <string name="pref_title_light_display_name">Image Server Light Url</string>
-    <string name="pref_title_right_display_name">Right Kick Server Url</string>
-    <string name="pref_title_left_display_name">Left Kick Server Url</string>
+    <string name="pref_title_right_display_name">Right ON Kick Server Url</string>
+    <string name="pref_title_right_off_display_name">Right OFF Kick Server Url</string>
+    <string name="pref_title_left_display_name">Left ON Kick Server Url</string>
+    <string name="pref_title_left_off_display_name">Left OFF Kick Server Url</string>
     <string name="pref_default_display_name">http://192.168.38.58:8080/cam.jpg?pwd=</string>
 
     <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
@@ -84,4 +86,6 @@
     <string name="server_url_right_string">server_right</string>
     <string name="server_url_left_string">server_left</string>
     <string name="server_url_light_string">server_light</string>
+    <string name="server_url_right_off_string">server_right_off</string>
+    <string name="server_url_left_off_string">server_left_off</string>
 </resources>

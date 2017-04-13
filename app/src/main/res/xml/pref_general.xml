@@ -34,6 +34,26 @@
         android:capitalize="words"
         android:defaultValue="@string/pref_default_display_name"
         android:inputType="textCapWords"
+        android:key="@string/server_url_right_off_string"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_right_off_display_name"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_display_name"
+        android:inputType="textCapWords"
+        android:key="@string/server_url_left_off_string"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="@string/pref_title_left_off_display_name"/>
+
+    <EditTextPreference
+        android:capitalize="words"
+        android:defaultValue="@string/pref_default_display_name"
+        android:inputType="textCapWords"
         android:key="@string/server_url_light_string"
         android:maxLines="1"
         android:selectAllOnFocus="true"
