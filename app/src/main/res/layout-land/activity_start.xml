@@ -1,0 +1,260 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="#0099cc"
+             tools:context="com.abs104a.client.androidsubmarine.StartActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+    <RelativeLayout
+        android:id="@+id/fullscreen_content"
+        style="?metaButtonBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_overlay"
+        android:orientation="horizontal"
+        tools:ignore="UselessParent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:keepScreenOn="true"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/line_size"
+            android:background="@android:color/white"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/center_horizontal_line"/>
+
+        <View
+            android:id="@+id/center_vartical_line"
+            android:layout_height="match_parent"
+            android:layout_width="@dimen/line_size"
+            android:background="@android:color/white"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"/>
+
+        <View
+            android:layout_width="@dimen/line_size"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/white"
+            android:layout_marginStart="@dimen/side_line_margin"
+            android:layout_marginTop="@dimen/side_line_margin"
+            android:layout_above="@+id/button_left"/>
+
+        <View
+            android:layout_width="@dimen/line_size"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:layout_marginStart="@dimen/side_line_margin"
+            android:layout_marginBottom="@dimen/side_line_margin"
+            android:layout_below="@+id/button_left"/>
+
+        <View
+            android:layout_width="@dimen/line_size"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/white"
+            android:layout_marginEnd="@dimen/side_line_margin"
+            android:layout_marginTop="@dimen/side_line_margin"
+            android:layout_above="@+id/button_right"/>
+
+        <View
+            android:layout_width="@dimen/line_size"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/white"
+            android:layout_marginEnd="@dimen/side_line_margin"
+            android:layout_marginBottom="@dimen/side_line_margin"
+            android:layout_below="@+id/button_right"/>
+
+        <!-- 横棒のやつ -->
+
+        <View
+            android:layout_width="@dimen/button_size_half"
+            android:layout_height="@dimen/line_size"
+            android:layout_alignParentTop="true"
+            android:background="@android:color/white"
+            android:layout_marginStart="@dimen/side_line_margin"
+            android:layout_marginTop="@dimen/side_line_margin"/>
+
+        <View
+            android:layout_width="@dimen/button_size_half"
+            android:layout_height="@dimen/line_size"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/white"
+            android:layout_marginEnd="@dimen/side_line_margin"
+            android:layout_marginTop="@dimen/side_line_margin"/>
+
+        <View
+            android:layout_width="@dimen/button_size_half"
+            android:layout_height="@dimen/line_size"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:layout_marginStart="@dimen/side_line_margin"
+            android:layout_marginBottom="@dimen/side_line_margin"/>
+
+        <View
+            android:layout_width="@dimen/button_size_half"
+            android:layout_height="@dimen/line_size"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:background="@android:color/white"
+            android:layout_marginEnd="@dimen/side_line_margin"
+            android:layout_marginBottom="@dimen/side_line_margin"/>
+
+
+        <!-- 中央のやつ -->
+
+        <View
+            android:id="@+id/center_up1_line"
+            android:layout_width="@dimen/button_size_half"
+            android:layout_height="@dimen/line_size"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/center_horizontal_line"
+            android:background="@android:color/white"
+            android:layout_marginBottom="@dimen/side_line_margin"/>
+
+        <View
+            android:id="@+id/center_up2_line"
+            android:layout_width="@dimen/button_size_half"
+            android:layout_height="@dimen/line_size"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/center_up1_line"
+            android:background="@android:color/white"
+            android:layout_marginBottom="@dimen/side_line_margin"/>
+
+        <View
+            android:id="@+id/center_down1_line"
+            android:layout_width="@dimen/button_size_half"
+            android:layout_height="@dimen/line_size"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/center_horizontal_line"
+            android:background="@android:color/white"
+            android:layout_marginTop="@dimen/side_line_margin"/>
+
+        <View
+            android:id="@+id/center_down2_line"
+            android:layout_width="@dimen/button_size_half"
+            android:layout_height="@dimen/line_size"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/center_down1_line"
+            android:background="@android:color/white"
+            android:layout_marginTop="@dimen/side_line_margin"/>
+
+        <ImageButton
+            android:id="@+id/button_right"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:layout_margin="@android:dimen/app_icon_size"
+            android:background="@drawable/button_background"
+            android:src="@drawable/right_btn"
+            android:contentDescription="Right"/>
+
+        <ImageButton
+            android:id="@+id/button_left"
+            android:layout_width="@dimen/button_size"
+            android:layout_height="@dimen/button_size"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:layout_margin="@android:dimen/app_icon_size"
+            android:src="@drawable/left_btn"
+            android:background="@drawable/button_background"
+            android:contentDescription="Left"/>
+
+        <ImageButton
+            android:id="@+id/startImageButton"
+            style="?metaButtonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_media_play"
+            android:background="@drawable/button_background"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/side_line_margin_half"
+            android:layout_toEndOf="@id/center_vartical_line"/>
+
+        <ImageButton
+            android:id="@+id/light_button"
+            style="?metaButtonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@id/center_vartical_line"
+            android:src="@android:drawable/ic_media_play"
+            android:background="@drawable/button_background"
+            android:layout_margin="@dimen/side_line_margin_half"
+            app:srcCompat="@android:drawable/ic_menu_view"/>
+
+        <ImageButton
+            android:id="@+id/camera_button"
+            style="?metaButtonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/camera"
+            android:layout_margin="@dimen/side_line_margin_half"
+            android:background="@drawable/button_background"
+            android:layout_toStartOf="@id/center_vartical_line"/>
+
+    </RelativeLayout>
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <ImageButton
+                android:id="@+id/startControlImageButton"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/side_line_margin"
+                android:scaleType="fitCenter"
+                android:src="@android:drawable/ic_media_play"
+                android:background="@drawable/button_background"/>
+
+            <ImageButton
+                android:id="@+id/settings_button"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="@dimen/button_size"
+                android:layout_height="@dimen/button_size"
+                android:layout_margin="@dimen/side_line_margin"
+                android:scaleType="fitCenter"
+                android:background="@drawable/button_background"
+                android:src="@drawable/setting"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>
